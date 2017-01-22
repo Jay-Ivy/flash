@@ -1,0 +1,176 @@
+/***************** 华丽的分割线-翻页支持动画 *****************/
+
+		   cover            覆盖（默认）
+		   zoom             缩放
+           blur             模糊
+
+/***************** 华丽的分割线-翻页支持动画END *****************/
+翻页动画调用：在全局外层.pages容器添加data-animation="zoom";
+
+
+/***************** 华丽的分割线-翻页支持方向 *****************/
+
+		   vertical         垂直（默认）
+           horizontal       水平
+
+/***************** 华丽的分割线-翻页支持方向END *****************/
+翻页动画调用：在全局外层.pages容器添加data-direction="vertical";
+
+
+/***************** 华丽的分割线-支持动画 *****************/
+
+		   rotate               旋转360°
+		   rotateIn             旋转进入
+           rotateOut            旋转离开
+		   flip                 3D旋转360°
+		   fadeInOutUp          从下往上淡入并淡出
+		   rollIn               翻滚进入
+		   rollOut              翻滚离开
+		   brakeInLeft          从左侧刹车进入
+		   brakeInRight         从右侧刹车进入
+		   brakeOutLeft         从左侧刹车离开
+		   brakeOutRight        从右侧刹车离开
+		   fadeIn               淡入
+		   fadeInLeft           从左侧淡入
+		   fadeInRight          从右侧淡入
+		   fadeInUp             从上方淡入
+		   fadeInDown           从下方淡入
+		   fadeOut              淡出
+		   fadeOutLeft          向左侧淡出
+		   fadeOutRight         向右侧淡出
+		   fadeOutUp            向上方淡出
+		   fadeOutDown          从下方淡出
+		   zoomIn               等比例淡入
+		   zoomOut              等比例淡出
+		   bounceIn             淡入后反弹
+		   bounceInLeft         从左侧淡入后反弹
+		   bounceInRight        从右侧淡入后反弹
+		   bounceInUp           从上方淡入后反弹
+		   bounceInDown         从下方淡入后反弹
+		   bounceOut            反弹后淡出
+		   bounceOutLeft        反弹后从左侧淡出
+		   bounceOutRight       反弹后从右侧淡出
+		   bounceOutUp          反弹后从上方淡出
+		   bounceOutDown        反弹后从下方淡出
+		   shake                左右晃动
+		   swing                摆动（荡秋千）
+		   wobble               左右晃动（不稳定的）
+		   rubberBand           橡皮筋拉扯
+		   heartbeat            心脏跳动
+		   scaleUp              放大
+		   scaleDown            缩小
+		   blur                 模糊
+		   sharp                清晰
+
+/***************** 华丽的分割线-支持动画END *****************/
+动画调用：添加data-animation="zoomIn";
+
+
+
+/***************** 华丽的分割线-支持事件 *****************/
+
+		   ready            场景准备完毕
+           animationOver    动画显示结束
+           change           页改变
+
+/***************** 华丽的分割线-支持事件END *****************/
+
+
+全局动画秀对象：STAGE
+
+/**
+ * 动画秀启动函数，主入口
+ * @param options {}
+ *          simulator : {
+ *				name : '动画秀',			// String:  秀场名称
+ *				battery : '99%'			// String:  秀场电量
+ *			},
+ *			audio : {
+ *				src : '',				// String:  音频路径，不为空时创建音频播放器
+ *				loop : true,			// Boolean: 是否循环播放
+ *				preload : 'auto',		// String:  预加载资源
+ *				autoplay : true			// Boolean: 是否自动播放
+ *			},
+ *          debug : true,               // Boolean: 是否启用debug模式
+ *          animation : true,           // Boolean: 模拟器启动动画
+ *          mousewheel : true,          // Boolean: 是否开启滑轮滚动翻页
+ *          turnDuration : 400,         // Integer: ms 翻页动画持续时间
+ *          autoTurn : false,           // Boolean: 是否自动翻页
+ *          autoTurnInterval : 3000,    // Integer: ms 自动翻页间隔时间
+ *          pauseOnAction : true,       // Boolean: 用户操作时停止自动翻页
+ *          turnAfterPaused : null,     // Integer: ms 用户停止操作多长时间以后重新开始自动翻页
+ *          blurScale : 0.2,            // Integer: 翻页模糊缩小比例临界值[0-1]
+ *          minBlur : 1,                // Integer: 翻页模糊最小值[0-10]
+ * @returns {flash}
+ */
+STAGE.startup(options);
+
+/**
+ * 绑定事件
+ * @param types         事件类型，多个用空格隔开
+ * @param handler       事件处理函数
+ * @returns {flash}
+ */
+STAGE.on(types, handler);
+
+/**
+ * 解绑事件
+ * @param types         事件类型，多个用空格隔开
+ * @returns {flash}
+ */
+STAGE.off(types);
+
+/**
+ * 触发事件
+ * @param types         事件类型，多个用空格隔开
+ * @returns {flash}
+ */
+STAGE.trigger(types);
+
+/**
+ * 自定义设置debug信息
+ * @param text  信息
+ * @returns {flash}
+ */
+STAGE.setDebug(text);
+
+/**
+ * 预加载图片
+ * @param options {}
+ *              url: '',                            // 图片路径
+ *              onSuccess: function(img) {},        // 预加载成功
+ *              onError: function(img) {},          // 预加载失败
+ *              onComplete: function(img) {}        // 预加载完成
+ * @returns {flash}
+ */
+STAGE.preload(options);
+
+/**
+ * 获得上页对象
+ * @returns {*|jQuery|HTMLElement}
+ */
+STAGE.getPrevPage();
+
+/**
+ * 获得当前页对象
+ * @returns {*|jQuery|HTMLElement}
+ */
+STAGE.getCurrentPage();
+
+/**
+ * 获得下页对象
+ * @returns {*|jQuery|HTMLElement}
+ */
+STAGE.getNextPage();
+
+/**
+ * 上一页
+ * @returns {flash}
+ */
+STAGE.prevPage();
+
+/**
+ * 下一页
+ * @returns {flash}
+ */
+STAGE.nextPage();
