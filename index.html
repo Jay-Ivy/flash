@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>动画秀</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="stage/online/stage.css"/>
+
+	<!--<script src="lib/jQuery/jquery-2.1.4.min.js"></script>-->
+	<script src="lib/zepto/zepto.min.js"></script>
+	<script src="stage/online/stage.js"></script>
+	<script>
+		$(function() {
+			STAGE.startup({
+				simulator: {
+					name: '丁杰',
+					battery: '99%'
+				},
+				audio : {
+					src : 'audios/audio.mp3'
+				},
+				autoTurn: true
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<!--data-animation: cover(default)、zoom、blur-->
+	<!--data-direction: vertical(default)、horizontal-->
+    <div class="pages" data-animation="cover" data-direction="vertical">
+        <section class="page">
+            <section class="page-bg" style="background-image: url('images/1.jpg');"></section>
+            <ul class="element-box">
+                <li class="element" data-animation="fadeIn 3s ease 1s 1 both" style="width: 12rem;margin: 1.5rem auto 0 auto;">
+                    <div class="element-wrapper"><img src="images/11.png"></div>
+                </li>
+                <li class="element" data-animation="fadeIn 5s ease 1.6s 1 both" style="width: 8rem;margin: 0 auto;">
+                    <div class="element-wrapper"><img src="images/12.png"></div>
+                </li>
+            </ul>
+        </section>
+        <section class="page">
+            <section class="page-bg" style="background-image: url('images/2.jpg');"></section>
+            <ul class="element-box">
+                <li class="element" data-animation="fadeIn 3s ease 0.3s 1 both" style="width: 8rem;">
+                    <div class="element-wrapper"><img src="images/21.png"></div>
+                </li>
+                <li class="element" data-animation="fadeIn 5s ease 0.8s 1 both" style="width: 8rem;margin-top: -.5rem;margin-left: .7rem;">
+                    <div class="element-wrapper"><img src="images/22.png"></div>
+                </li>
+            </ul>
+        </section>
+        <section class="page page-current">
+            <section class="page-bg" style="background-image: url('images/3.jpg');"></section>
+            <ul class="element-box">
+                <li class="element" data-animation="fadeInLeft 3s ease 0s 1 both" style="width: 8rem;margin-left: .7rem;">
+                    <div class="element-wrapper"><img src="images/31.png"></div>
+                </li>
+                <li class="element" data-animation="fadeInLeft 4.7s ease 0.5s 1 both" style="width: 6.5rem;">
+                    <div class="element-wrapper"><img src="images/32.png"></div>
+                </li>
+                <li class="element" data-animation="fadeInLeft 4s ease 1s 1 both" style="width: 8rem;margin-top: -1.5rem;margin-left: 1rem;">
+                    <div class="element-wrapper"><img src="images/33.png"></div>
+                </li>
+            </ul>
+        </section>
+        <section class="page">
+            <section class="page-bg" style="background-image: url('images/4.jpg');"></section>
+            <ul class="element-box">
+                <li class="element" data-animation="fadeIn 4s ease 0s 1 both" style="width: 10rem;margin: 1.5rem auto 0 auto;">
+                    <div class="element-wrapper"><img src="images/41.png"></div>
+                </li>
+            </ul>
+        </section>
+        <section class="page">
+            <section class="page-bg" style="background-image: url('images/5.jpg');"></section>
+            <ul class="element-box">
+                <li class="element" data-animation="fadeIn 4s ease 0.5s 1 both" style="position: absolute;bottom: 1.1rem;right: 2rem;width: 4rem;">
+                    <div class="element-wrapper"><img src="images/51.png"></div>
+                </li>
+                <li class="element" data-animation="fadeIn 4s ease 1s 1 both" style="position: absolute;bottom: 0;right: 2rem;width: 2.5rem;">
+                    <div class="element-wrapper"><img src="images/52.png"></div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
